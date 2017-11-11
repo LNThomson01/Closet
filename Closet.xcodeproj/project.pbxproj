@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69A611111FB6428F002661A2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A611101FB6428F002661A2 /* MainViewController.swift */; };
+		69A611131FB6550B002661A2 /* WardrobeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A611121FB6550B002661A2 /* WardrobeViewController.swift */; };
+		69A611151FB666A6002661A2 /* WeatherGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A611141FB666A6002661A2 /* WeatherGetter.swift */; };
 		69B76BF51F94F54200111D82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B76BF41F94F54200111D82 /* AppDelegate.swift */; };
 		69B76BF71F94F54200111D82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B76BF61F94F54200111D82 /* ViewController.swift */; };
 		69B76BFA1F94F54200111D82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69B76BF81F94F54200111D82 /* Main.storyboard */; };
@@ -26,6 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		69A611101FB6428F002661A2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		69A611121FB6550B002661A2 /* WardrobeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeViewController.swift; sourceTree = "<group>"; };
+		69A611141FB666A6002661A2 /* WeatherGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherGetter.swift; sourceTree = "<group>"; };
 		69B76BF11F94F54200111D82 /* Closet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Closet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69B76BF41F94F54200111D82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69B76BF61F94F54200111D82 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,11 +84,14 @@
 			isa = PBXGroup;
 			children = (
 				69B76BF41F94F54200111D82 /* AppDelegate.swift */,
+				69A611101FB6428F002661A2 /* MainViewController.swift */,
 				69B76BF61F94F54200111D82 /* ViewController.swift */,
+				69A611121FB6550B002661A2 /* WardrobeViewController.swift */,
 				69B76BF81F94F54200111D82 /* Main.storyboard */,
 				69B76BFB1F94F54200111D82 /* Assets.xcassets */,
 				69B76BFD1F94F54200111D82 /* LaunchScreen.storyboard */,
 				69B76C001F94F54200111D82 /* Info.plist */,
+				69A611141FB666A6002661A2 /* WeatherGetter.swift */,
 			);
 			path = Closet;
 			sourceTree = "<group>";
@@ -199,6 +208,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69A611131FB6550B002661A2 /* WardrobeViewController.swift in Sources */,
+				69A611151FB666A6002661A2 /* WeatherGetter.swift in Sources */,
+				69A611111FB6428F002661A2 /* MainViewController.swift in Sources */,
 				69B76BF71F94F54200111D82 /* ViewController.swift in Sources */,
 				69B76BF51F94F54200111D82 /* AppDelegate.swift in Sources */,
 			);

@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var cloudySwitch: UISwitch!
     @IBOutlet weak var rainySwitch: UISwitch!
     @IBOutlet weak var windySwitch: UISwitch!
+    @IBOutlet weak var snowySwitch: UISwitch!
     
     
     override func viewDidLoad() {
@@ -27,7 +28,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
     
     //MARK: Actions
     @IBAction func temperatureSlider(_ sender: UISlider) {
@@ -35,9 +35,5 @@ class ViewController: UIViewController {
         degreesLabel.text = "\(currentValue) Degrees F"
     }
     
-    @IBAction func findOutfitButton(_ sender: UIButton) {
-        
-    }
-
 }
 
