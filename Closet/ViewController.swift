@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     func getWeather()
     {
         let session = URLSession.shared
-        let weatherURL = URL(string: "http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=fb83cf7feb086f5c85003392f4d5a318")!
+        let weatherURL = URL(string: "http://api.openweathermap.org/data/2.5/weather?id=4259418&units=imperial&appid=fb83cf7feb086f5c85003392f4d5a318")!
         let dataTask = session.dataTask(with: weatherURL) {
             (data: Data?, response: URLResponse?, error: Error?) in
             if let error = error {
@@ -46,7 +46,7 @@ class ViewController: UIViewController {
                         if let mainDictionary = jsonObj!.value(forKey: "main") as? NSDictionary {
                             if let temperature = mainDictionary.value(forKey: "temp") {
                                 DispatchQueue.main.async {
-                                    self.degreesLabel.text = "Atlanta Temperature: \(temperature)°F"
+                                    self.degreesLabel.text = "\(temperature)°F"
                                 }
                             }
                         } else {
