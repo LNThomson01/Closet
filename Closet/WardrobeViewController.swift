@@ -10,7 +10,6 @@ import UIKit
 import CoreData
 
 class WardrobeViewController: UIViewController {
-    var test1: [NSManagedObject] = []
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -34,11 +33,11 @@ class WardrobeViewController: UIViewController {
         
         //2
         let fetchRequest =
-            NSFetchRequest<NSManagedObject>(entityName: "Test")
+            NSFetchRequest<NSManagedObject>(entityName: "PieceOfClothing")
         
         //3
         do {
-            test1 = try managedContext.fetch(fetchRequest)
+            DataContainerSingleton.sharedDataContainer.pieceOfClothingObject = try managedContext.fetch(fetchRequest)
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
@@ -49,51 +48,14 @@ class WardrobeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func addClothing(_ sender: UIBarButtonItem) {
-        self.save(test: "test")
+    @IBAction func unwindToWardrobe(segue: UIStoryboardSegue) {
         self.tableView.reloadData()
     }
     
-    func save(test: String) {
-        
-        guard let appDelegate =
-            UIApplication.shared.delegate as? AppDelegate else {
-                return
-        }
-        
-        // 1
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        // 2
-        let entity =
-            NSEntityDescription.entity(forEntityName: "Test",
-                                       in: managedContext)!
-        
-        let tester = NSManagedObject(entity: entity,
-                                     insertInto: managedContext)
-        
-        // 3
-        tester.setValue(test, forKeyPath: "testName")
-        
-        // 4
-        do {
-            try managedContext.save()
-            test1.append(tester)
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
-        }
+    @IBAction func backButton(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "unwindToMain", sender: self)
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -101,19 +63,19 @@ extension WardrobeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
-        return test1.count
+        return DataContainerSingleton.sharedDataContainer.pieceOfClothingObject.count
     }
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath)
         -> UITableViewCell {
             
-            let tester = test1[indexPath.row]
+            let clothes = DataContainerSingleton.sharedDataContainer.pieceOfClothingObject[indexPath.row]
             let cell =
                 tableView.dequeueReusableCell(withIdentifier: "Cell",
                                               for: indexPath)
             cell.textLabel?.text =
-                tester.value(forKeyPath: "testName") as? String
+                clothes.value(forKeyPath: "descriptionOfClothing") as? String
             return cell
     }
 }

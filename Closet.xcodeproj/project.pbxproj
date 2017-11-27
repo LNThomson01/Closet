@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		69620CDF1FC3113700ABA7D4 /* MainViewController.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69620CDD1FC3113700ABA7D4 /* MainViewController.xcdatamodeld */; };
+		69932ACD1FCB727C00D74447 /* DataContainerSingelton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69932ACC1FCB727B00D74447 /* DataContainerSingelton.swift */; };
 		69A611111FB6428F002661A2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A611101FB6428F002661A2 /* MainViewController.swift */; };
 		69A611131FB6550B002661A2 /* WardrobeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A611121FB6550B002661A2 /* WardrobeViewController.swift */; };
 		69B76BF51F94F54200111D82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B76BF41F94F54200111D82 /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		69620CDE1FC3113700ABA7D4 /* MainViewController.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MainViewController.xcdatamodel; sourceTree = "<group>"; };
+		69932ACC1FCB727B00D74447 /* DataContainerSingelton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataContainerSingelton.swift; sourceTree = "<group>"; };
 		69A611101FB6428F002661A2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		69A611121FB6550B002661A2 /* WardrobeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeViewController.swift; sourceTree = "<group>"; };
 		69B76BF11F94F54200111D82 /* Closet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Closet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +90,7 @@
 		69B76BF31F94F54200111D82 /* Closet */ = {
 			isa = PBXGroup;
 			children = (
+				69932ACC1FCB727B00D74447 /* DataContainerSingelton.swift */,
 				69B76BF41F94F54200111D82 /* AppDelegate.swift */,
 				69A611101FB6428F002661A2 /* MainViewController.swift */,
 				69620CDD1FC3113700ABA7D4 /* MainViewController.xcdatamodeld */,
@@ -221,6 +224,7 @@
 				69B76BF71F94F54200111D82 /* ViewController.swift in Sources */,
 				69620CDF1FC3113700ABA7D4 /* MainViewController.xcdatamodeld in Sources */,
 				69B76BF51F94F54200111D82 /* AppDelegate.swift in Sources */,
+				69932ACD1FCB727C00D74447 /* DataContainerSingelton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

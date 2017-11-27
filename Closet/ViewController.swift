@@ -7,67 +7,98 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
-
+    
     //MARK: Properties
     @IBOutlet weak var degreesLabel: UILabel!
-    @IBOutlet weak var temperatureSliderOutlet: UISlider!
-    @IBOutlet weak var cloudySwitch: UISwitch!
-    @IBOutlet weak var rainySwitch: UISwitch!
-    @IBOutlet weak var windySwitch: UISwitch!
-    @IBOutlet weak var snowySwitch: UISwitch!
+    @IBOutlet weak var clothingTableView: UITableView!
     
+    var clothingSuitable: [NSManagedObject] =  []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getWeather()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+        
+        self.degreesLabel.text = "\(DataContainerSingleton.sharedDataContainer.currentTemp) Degrees F"
 
+        clothingTableView.register(UITableViewCell.self,
+                           forCellReuseIdentifier: "Cell")
+
+        //tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //1
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        
+        //2
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "PieceOfClothing")
+        
+        //3
+        do {
+            DataContainerSingleton.sharedDataContainer.pieceOfClothingObject = try managedContext.fetch(fetchRequest)
+            getSuitableClothing(allClothing: DataContainerSingleton.sharedDataContainer.pieceOfClothingObject)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func getWeather()
+    func getSuitableClothing (allClothing: [NSManagedObject])
     {
-        let session = URLSession.shared
-        let weatherURL = URL(string: "http://api.openweathermap.org/data/2.5/weather?id=4259418&units=imperial&appid=fb83cf7feb086f5c85003392f4d5a318")!
-        let dataTask = session.dataTask(with: weatherURL) {
-            (data: Data?, response: URLResponse?, error: Error?) in
-            if let error = error {
-                print("Error:\n\(error)")
-            } else {
-                if let data = data {
-                    let dataString = String(data: data, encoding: String.Encoding.utf8)
-                    print("All the weather data:\n\(dataString!)")
-                    if let jsonObj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? NSDictionary {
-                        if let mainDictionary = jsonObj!.value(forKey: "main") as? NSDictionary {
-                            if let temperature = mainDictionary.value(forKey: "temp") {
-                                DispatchQueue.main.async {
-                                    self.degreesLabel.text = "\(temperature)°F"
-                                }
-                            }
-                        } else {
-                            print("Error: unable to find temperature in dictionary")
-                        }
-                    } else {
-                        print("Error: unable to convert json data")
-                    }
-                } else {
-                    print("Error: did not receive data")
-                }
+        let temp = DataContainerSingleton.sharedDataContainer.currentTemp
+        var count: Int = 0
+        while(count < allClothing.count)
+        {
+            let min = allClothing[count].value(forKeyPath: "minTemp") as! NSNumber
+            let max = allClothing[count].value(forKeyPath: "maxTemp") as! NSNumber
+            print(allClothing[count])
+            print("Min \(min) Max \(max)")
+            print(temp)
+            if(min.doubleValue < temp && max.doubleValue > temp )
+            {
+                print(allClothing[count])
+                clothingSuitable.append(allClothing[count])
             }
+            count = count + 1
         }
-        dataTask.resume()
+        print(clothingSuitable)
+    }
+
+}
+
+extension ViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
+        return clothingSuitable.count
     }
     
-    //MARK: Actions
-    @IBAction func temperatureSlider(_ sender: UISlider) {
-        let currentValue = Int(temperatureSliderOutlet.value)
-        degreesLabel.text = "\(currentValue) Degrees F"
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath)
+        -> UITableViewCell {
+            
+            let clothes = clothingSuitable[indexPath.row]
+            let cell =
+                tableView.dequeueReusableCell(withIdentifier: "Cell",
+                                              for: indexPath)
+                cell.textLabel?.text = clothes.value(forKeyPath: "descriptionOfClothing") as? String
+            return cell
     }
-    
 }
 
