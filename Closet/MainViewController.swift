@@ -30,15 +30,13 @@ class MainViewController: UIViewController {
     
     @IBAction func unwindToMain(segue: UIStoryboardSegue) {}
     
-    @IBAction func clearClothing(_ sender: UIButton) {
-        DataContainerSingleton.sharedDataContainer.pieceOfClothingObject.removeAll()
-    }
     
     func getWeather()
     {
         let session = URLSession.shared
-        let weatherURL = URL(string: "http://api.openweathermap.org/data/2.5/weather?id=4259418&units=imperial&appid=fb83cf7feb086f5c85003392f4d5a318")!
+        //let weatherURL = URL(string: "http://api.openweathermap.org/data/2.5/weather?id=4920423&units=imperial&appid=fb83cf7feb086f5c85003392f4d5a318")!
         //let weatherURL = URL(string: "http://api.openweathermap.org/data/2.5/weather?id=5308655&units=imperial&appid=fb83cf7feb086f5c85003392f4d5a318")!
+        let weatherURL = URL(string: "http://api.openweathermap.org/data/2.5/weather?id=5861897&units=imperial&appid=fb83cf7feb086f5c85003392f4d5a318")!
         let dataTask = session.dataTask(with: weatherURL) {
             (data: Data?, response: URLResponse?, error: Error?) in
             if let error = error {
@@ -56,6 +54,11 @@ class MainViewController: UIViewController {
                             }
                         } else {
                             print("Error: unable to find temperature in dictionary")
+                        }
+                        if let cityName = jsonObj!.value(forKey: "name") as? String{
+                            DispatchQueue.main.async {
+                                DataContainerSingleton.sharedDataContainer.city = cityName
+                            }
                         }
                     } else {
                         print("Error: unable to convert json data")

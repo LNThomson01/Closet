@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.degreesLabel.text = "\(DataContainerSingleton.sharedDataContainer.currentTemp) Degrees F"
+        self.degreesLabel.text = "\(DataContainerSingleton.sharedDataContainer.currentTemp) Degrees F in \(DataContainerSingleton.sharedDataContainer.city)"
 
         clothingTableView.register(UITableViewCell.self,
                            forCellReuseIdentifier: "Cell")

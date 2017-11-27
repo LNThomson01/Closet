@@ -23,5 +23,6 @@ class DataContainerSingleton {
     
     var pieceOfClothingObject: [NSManagedObject] = []
     var currentTemp: Double = 0
+    var city: String = ""
     
 }
