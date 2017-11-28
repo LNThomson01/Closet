@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69620CDF1FC3113700ABA7D4 /* MainViewController.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69620CDD1FC3113700ABA7D4 /* MainViewController.xcdatamodeld */; };
+		69932ACD1FCB727C00D74447 /* DataContainerSingelton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69932ACC1FCB727B00D74447 /* DataContainerSingelton.swift */; };
+		69A611111FB6428F002661A2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A611101FB6428F002661A2 /* MainViewController.swift */; };
+		69A611131FB6550B002661A2 /* WardrobeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A611121FB6550B002661A2 /* WardrobeViewController.swift */; };
 		69B76BF51F94F54200111D82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B76BF41F94F54200111D82 /* AppDelegate.swift */; };
 		69B76BF71F94F54200111D82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B76BF61F94F54200111D82 /* ViewController.swift */; };
 		69B76BFA1F94F54200111D82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69B76BF81F94F54200111D82 /* Main.storyboard */; };
 		69B76BFC1F94F54200111D82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B76BFB1F94F54200111D82 /* Assets.xcassets */; };
 		69B76BFF1F94F54200111D82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69B76BFD1F94F54200111D82 /* LaunchScreen.storyboard */; };
 		69B76C0A1F94F54200111D82 /* ClosetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B76C091F94F54200111D82 /* ClosetTests.swift */; };
+		69BA5C371FB9D77000139C1D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69BA5C361FB9D77000139C1D /* Default-568h@2x.png */; };
+		69D994FF1FC8982C00684455 /* AddClothingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D994FE1FC8982C00684455 /* AddClothingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +32,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		69620CDE1FC3113700ABA7D4 /* MainViewController.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MainViewController.xcdatamodel; sourceTree = "<group>"; };
+		69932ACC1FCB727B00D74447 /* DataContainerSingelton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataContainerSingelton.swift; sourceTree = "<group>"; };
+		69A611101FB6428F002661A2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		69A611121FB6550B002661A2 /* WardrobeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeViewController.swift; sourceTree = "<group>"; };
 		69B76BF11F94F54200111D82 /* Closet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Closet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69B76BF41F94F54200111D82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69B76BF61F94F54200111D82 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +46,8 @@
 		69B76C051F94F54200111D82 /* ClosetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClosetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69B76C091F94F54200111D82 /* ClosetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetTests.swift; sourceTree = "<group>"; };
 		69B76C0B1F94F54200111D82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69BA5C361FB9D77000139C1D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		69D994FE1FC8982C00684455 /* AddClothingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClothingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +71,7 @@
 		69B76BE81F94F54200111D82 = {
 			isa = PBXGroup;
 			children = (
+				69BA5C361FB9D77000139C1D /* Default-568h@2x.png */,
 				69B76BF31F94F54200111D82 /* Closet */,
 				69B76C081F94F54200111D82 /* ClosetTests */,
 				69B76BF21F94F54200111D82 /* Products */,
@@ -77,8 +90,13 @@
 		69B76BF31F94F54200111D82 /* Closet */ = {
 			isa = PBXGroup;
 			children = (
+				69932ACC1FCB727B00D74447 /* DataContainerSingelton.swift */,
 				69B76BF41F94F54200111D82 /* AppDelegate.swift */,
+				69A611101FB6428F002661A2 /* MainViewController.swift */,
+				69620CDD1FC3113700ABA7D4 /* MainViewController.xcdatamodeld */,
 				69B76BF61F94F54200111D82 /* ViewController.swift */,
+				69A611121FB6550B002661A2 /* WardrobeViewController.swift */,
+				69D994FE1FC8982C00684455 /* AddClothingViewController.swift */,
 				69B76BF81F94F54200111D82 /* Main.storyboard */,
 				69B76BFB1F94F54200111D82 /* Assets.xcassets */,
 				69B76BFD1F94F54200111D82 /* LaunchScreen.storyboard */,
@@ -180,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69B76BFF1F94F54200111D82 /* LaunchScreen.storyboard in Resources */,
+				69BA5C371FB9D77000139C1D /* Default-568h@2x.png in Resources */,
 				69B76BFC1F94F54200111D82 /* Assets.xcassets in Resources */,
 				69B76BFA1F94F54200111D82 /* Main.storyboard in Resources */,
 			);
@@ -199,8 +218,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69A611131FB6550B002661A2 /* WardrobeViewController.swift in Sources */,
+				69A611111FB6428F002661A2 /* MainViewController.swift in Sources */,
+				69D994FF1FC8982C00684455 /* AddClothingViewController.swift in Sources */,
 				69B76BF71F94F54200111D82 /* ViewController.swift in Sources */,
+				69620CDF1FC3113700ABA7D4 /* MainViewController.xcdatamodeld in Sources */,
 				69B76BF51F94F54200111D82 /* AppDelegate.swift in Sources */,
+				69932ACD1FCB727C00D74447 /* DataContainerSingelton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +468,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		69620CDD1FC3113700ABA7D4 /* MainViewController.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				69620CDE1FC3113700ABA7D4 /* MainViewController.xcdatamodel */,
+			);
+			currentVersion = 69620CDE1FC3113700ABA7D4 /* MainViewController.xcdatamodel */;
+			path = MainViewController.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 69B76BE91F94F54200111D82 /* Project object */;
 }

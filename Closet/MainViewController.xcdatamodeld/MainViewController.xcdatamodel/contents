@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13233.4" systemVersion="17B48" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Bottom" representedClassName=".Bottom" parentEntity="PieceOfClothing" syncable="YES" codeGenerationType="class"/>
+    <entity name="Dress" representedClassName=".Dress" parentEntity="PieceOfClothing" syncable="YES" codeGenerationType="class"/>
+    <entity name="PieceOfClothing" representedClassName=".PieceOfClothing" syncable="YES" codeGenerationType="class">
+        <attribute name="descriptionOfClothing" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="maxTemp" attributeType="Double" minValueString="-32" maxValueString="120" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="minTemp" attributeType="Double" minValueString="-32" maxValueString="120" defaultValueString="40" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Shoes" representedClassName=".Shoes" parentEntity="PieceOfClothing" syncable="YES" codeGenerationType="class"/>
+    <entity name="Test" representedClassName="Test" syncable="YES" codeGenerationType="class">
+        <attribute name="testName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Top" representedClassName=".Tops" parentEntity="PieceOfClothing" syncable="YES" codeGenerationType="class"/>
+    <elements>
+        <element name="Bottom" positionX="-63" positionY="81" width="128" height="43"/>
+        <element name="Dress" positionX="115" positionY="-18" width="128" height="43"/>
+        <element name="PieceOfClothing" positionX="-63" positionY="-54" width="128" height="30"/>
+        <element name="Shoes" positionX="70" positionY="137" width="128" height="43"/>
+        <element name="Test" positionX="72" positionY="90" width="128" height="60"/>
+        <element name="Top" positionX="124" positionY="83" width="128" height="43"/>
+    </elements>
+</model>
